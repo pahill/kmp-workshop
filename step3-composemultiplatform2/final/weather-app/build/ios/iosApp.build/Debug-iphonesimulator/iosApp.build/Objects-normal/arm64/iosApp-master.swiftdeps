@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)"
+options: "ffc54199d2179d68b11361b3ddf7e4131a4935876d0af53b0ba96c9c0f09c271"
+build_start_time: [1691059668, 483767000]
+build_end_time: [1691059671, 709689000]
+inputs:
+  "/Users/pamelahill/kmp-workshop/step3-composemultiplatform2/final/weather-app/iosApp/iosApp/ContentView.swift": [1690978536, 557596922]
+  "/Users/pamelahill/kmp-workshop/step3-composemultiplatform2/final/weather-app/iosApp/iosApp/iOSApp.swift": [1690978536, 557792068]

@@ -34,6 +34,7 @@ replay_pid*
 /step2-composemultiplatform1/final/weather-app/build/
 /step2-composemultiplatform1/final/weather-app/androidApp/build/
 /step2-composemultiplatform1/final/weather-app/local.properties
+/step2-composemultiplatform1/final/weather-app/shared/build/
 /step2-composemultiplatform1/starter/.idea/
 /step2-composemultiplatform1/starter/weather-app/.gradle
 /step2-composemultiplatform1/starter/weather-app/.idea
@@ -41,4 +42,17 @@ replay_pid*
 /step2-composemultiplatform1/starter/weather-app/androidApp/build
 /step2-composemultiplatform1/starter/weather-app/local.properties
 /step2-composemultiplatform1/starter/weather-app/shared/build/
-/step2-composemultiplatform1/final/weather-app/shared/build/
+/step3-composemultiplatform2/starter/.idea/
+/step3-composemultiplatform2/starter/weather-app/.gradle
+/step3-composemultiplatform2/starter/weather-app/.idea
+/step3-composemultiplatform2/starter/weather-app/build
+/step3-composemultiplatform2/starter/weather-app/androidApp/build
+/step3-composemultiplatform2/starter/weather-app/local.properties
+/step3-composemultiplatform2/starter/weather-app/shared/build/
+/step3-composemultiplatform2/final/.idea/
+/step3-composemultiplatform2/final/weather-app/.gradle/
+/step3-composemultiplatform2/final/weather-app/.idea/
+/step3-composemultiplatform2-composemultiplatform1/final/weather-app/build/
+/step3-composemultiplatform2/final/weather-app/androidApp/build/
+/step3-composemultiplatform2/final/weather-app/local.properties
+/step3-composemultiplatform2/final/weather-app/shared/build/
