@@ -40,3 +40,5 @@ replay_pid*
 /step2-composemultiplatform1/starter/weather-app/build
 /step2-composemultiplatform1/starter/weather-app/androidApp/build
 /step2-composemultiplatform1/starter/weather-app/local.properties
+/step2-composemultiplatform1/starter/weather-app/shared/build/
+/step2-composemultiplatform1/final/weather-app/shared/build/
