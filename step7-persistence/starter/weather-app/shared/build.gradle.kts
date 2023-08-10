@@ -56,8 +56,6 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:2.3.3")
                 implementation("io.ktor:ktor-client-content-negotiation:2.3.3")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.3")
-                implementation("app.cash.sqldelight:runtime:2.0.0-alpha05")
-                implementation("app.cash.sqldelight:primitive-adapters:2.0.0-alpha05")
                 //implementation("io.github.xxfast:kstore:0.6.0")
                 //implementation("io.github.xxfast:kstore-file:0.6.0")
 

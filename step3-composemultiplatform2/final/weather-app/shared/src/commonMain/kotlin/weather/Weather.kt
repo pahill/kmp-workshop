@@ -1,5 +1,8 @@
 package weather
 
+import kotlinx.serialization.Serializable
+
+@Serializable
 data class Weather(
     val base: String,
     val clouds: Clouds,

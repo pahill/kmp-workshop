@@ -34,6 +34,7 @@ kotlin {
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 api("io.github.qdsfdhvh:image-loader:1.6.3")
+                implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.3")
                 implementation("cafe.adriel.voyager:voyager-navigator:1.0.0-rc05")
             }
         }

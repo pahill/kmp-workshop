@@ -97,14 +97,6 @@ data class WeatherScreen(val cityName: String, val lat: Double, val long: Double
                         long = long
                     )
                 }
-                item {
-                    WeatherCard(
-                        modifier = Modifier,
-                        cityName = "Your location",
-                        lat = -25.7479, // This will eventually be your location
-                        long = 28.2293
-                    )
-                }
             }
         }
     }

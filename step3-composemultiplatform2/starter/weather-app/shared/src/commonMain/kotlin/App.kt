@@ -91,7 +91,9 @@ fun CountryCard(modifier: Modifier, country: Country) {
             }
             Column(modifier = Modifier.fillMaxWidth().height(128.dp).padding(8.dp)) {
                 CountryNames(name = country.name)
-                WeatherButton(capitals = country.capital, capitalInfo = country.capitalInfo)
+                if (country.capital.isNotEmpty() && country.capitalInfo != null){
+                    WeatherButton(capitals = country.capital, capitalInfo = country.capitalInfo)
+                }
             }
         }
     }

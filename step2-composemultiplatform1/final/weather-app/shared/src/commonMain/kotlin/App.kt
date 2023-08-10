@@ -19,6 +19,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import com.seiko.imageloader.rememberImagePainter
+import country.Country
+import country.Flags
+import country.Name
+import country.countries
 
 @Composable
 fun App() {
@@ -82,7 +86,7 @@ fun WeatherButton(modifier: Modifier = Modifier, capitals: List<String>) {
         verticalAlignment = Alignment.Bottom
     ) {
         LazyColumn {
-            items(capitals){
+            items(capitals) {
                 Button(onClick = {}) {
                     Text(text = "$it weather")
                 }

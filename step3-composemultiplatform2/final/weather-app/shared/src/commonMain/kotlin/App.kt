@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -21,6 +22,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.CurrentScreen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -30,12 +32,30 @@ import country.Country
 import country.Flags
 import country.Name
 import country.countries
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.painterResource
 import weather.getWeather
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     MaterialTheme {
-        Navigator(HomeScreen())
+        Navigator(HomeScreen()) { navigator ->
+            Scaffold(topBar = {
+                if (navigator.canPop)
+                    Button(modifier = Modifier.padding(4.dp).width(48.dp).height(48.dp), onClick = {
+                        navigator.pop()
+                    }) {
+                        val painterResource = painterResource("back.xml")
+                        Image(
+                            painter = painterResource,
+                            contentDescription = "Back"
+                        )
+                    }
+            }) {
+                CurrentScreen()
+            }
+        }
     }
 }
 
@@ -65,14 +85,6 @@ data class WeatherScreen(val cityName: String, val lat: Double, val long: Double
                         long = long
                     )
                 }
-                item {
-                    WeatherCard(
-                        modifier = Modifier,
-                        cityName = "Your location",
-                        lat = 0.0,
-                        long = 0.0
-                    )
-                }
             }
         }
     }
@@ -91,7 +103,9 @@ fun CountryCard(modifier: Modifier, country: Country) {
             }
             Column(modifier = Modifier.fillMaxWidth().height(128.dp).padding(8.dp)) {
                 CountryNames(name = country.name)
-                WeatherButton(capitals = country.capital, capitalInfo = country.capitalInfo)
+                if (country.capital.isNotEmpty() && country.capitalInfo != null) {
+                    WeatherButton(capitals = country.capital, capitalInfo = country.capitalInfo)
+                }
             }
         }
     }
