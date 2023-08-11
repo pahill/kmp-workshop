@@ -14,9 +14,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
@@ -30,12 +28,11 @@ import country.Country
 import country.Flags
 import country.Name
 import country.countries
-import weather.getWeather
 
 @Composable
 fun App() {
     MaterialTheme {
-        //TODO
+        Navigator(HomeScreen())
     }
 }
 
@@ -83,7 +80,7 @@ fun CountryCard(modifier: Modifier, country: Country) {
             }
             Column(modifier = Modifier.fillMaxWidth().height(128.dp).padding(8.dp)) {
                 CountryNames(name = country.name)
-                if (country.capital.isNotEmpty() && country.capitalInfo != null){
+                if (country.capital.isNotEmpty() && country.capitalInfo != null) {
                     WeatherButton(capitals = country.capital, capitalInfo = country.capitalInfo)
                 }
             }
