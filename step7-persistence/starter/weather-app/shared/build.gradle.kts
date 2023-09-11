@@ -1,5 +1,6 @@
 import org.jetbrains.compose.internal.utils.getLocalProperty
 import java.util.*
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 
 plugins {
     kotlin("multiplatform")
@@ -14,6 +15,8 @@ plugins {
 kotlin {
     androidTarget()
 
+    jvm("desktop")
+
     iosX64()
     iosArm64()
     iosSimulatorArm64() {
@@ -26,7 +29,6 @@ kotlin {
             )
         }
     }
-
 
     cocoapods {
         version = "1.0.0"
@@ -56,9 +58,8 @@ kotlin {
                 implementation("io.ktor:ktor-client-core:2.3.3")
                 implementation("io.ktor:ktor-client-content-negotiation:2.3.3")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.3")
-                //implementation("io.github.xxfast:kstore:0.6.0")
-                //implementation("io.github.xxfast:kstore-file:0.6.0")
-
+//                implementation("io.github.xxfast:kstore:0.6.0")
+//                implementation("io.github.xxfast:kstore-file:0.6.0")
             }
         }
         val commonTest by getting {
@@ -79,6 +80,18 @@ kotlin {
             }
         }
         val androidUnitTest by getting {
+            dependencies {
+                implementation(kotlin("test-junit"))
+                implementation("junit:junit:4.13.2")
+            }
+        }
+        val desktopMain by getting {
+            dependencies {
+                implementation(compose.desktop.currentOs)
+                implementation("net.harawata:appdirs:1.2.1")
+            }
+        }
+        val desktopTest by getting {
             dependencies {
                 implementation(kotlin("test-junit"))
                 implementation("junit:junit:4.13.2")
@@ -128,6 +141,18 @@ android {
     }
     kotlin {
         jvmToolchain(11)
+    }
+}
+
+compose.desktop {
+    application {
+        mainClass = "MainKt"
+
+        nativeDistributions {
+            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
+            packageName = "my.company.project"
+            packageVersion = "1.0.0"
+        }
     }
 }
 
