@@ -11,10 +11,10 @@ import weather.Weather
 
 class WeatherApi {
     private val httpClient = HttpClient {
-        //TODO
+        //TODO Setup the HTTP client and install the plugins
     }
 
     suspend fun getWeather(lat: Double, long: Double): Weather {
-        TODO()
+        TODO() // Call the webservice and get the body
     }
 }

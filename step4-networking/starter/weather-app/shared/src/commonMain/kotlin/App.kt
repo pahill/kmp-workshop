@@ -174,7 +174,9 @@ fun WeatherButton(modifier: Modifier = Modifier, capitals: List<String>, capital
 fun WeatherCard(modifier: Modifier, cityName: String, lat: Double, long: Double) {
     var weather: Weather? by remember { mutableStateOf(null) }
 
-    //TODO
+    LaunchedEffect(Unit) {
+        weather = TODO() // Call your WeatherApi function
+    }
 
     weather?.let { weather ->
         Card(
