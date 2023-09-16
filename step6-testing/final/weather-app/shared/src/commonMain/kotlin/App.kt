@@ -162,8 +162,10 @@ fun Flag(modifier: Modifier = Modifier, flag: Flags) {
 
 @Composable
 fun CountryNames(modifier: Modifier = Modifier, name: Name) {
-    Text(modifier = modifier, text = name.common, style = MaterialTheme.typography.body1)
-    Text(modifier = modifier, text = name.official, style = MaterialTheme.typography.body2)
+    Column(modifier = modifier) {
+        Text(text = name.common, style = MaterialTheme.typography.body1)
+        Text(text = name.official, style = MaterialTheme.typography.body2)
+    }
 }
 
 @Composable

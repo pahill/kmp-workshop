@@ -11,14 +11,17 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
+import cafe.adriel.voyager.navigator.CurrentScreen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -28,11 +31,30 @@ import country.Country
 import country.Flags
 import country.Name
 import country.countries
+import org.jetbrains.compose.resources.ExperimentalResourceApi
+import org.jetbrains.compose.resources.painterResource
+import weather.getWeather
 
+@OptIn(ExperimentalResourceApi::class)
 @Composable
 fun App() {
     MaterialTheme {
-        Navigator(HomeScreen())
+        Navigator(HomeScreen()) { navigator ->
+            Scaffold(topBar = {
+                if (navigator.canPop)
+                    Button(modifier = Modifier.padding(4.dp).width(48.dp).height(48.dp), onClick = {
+                        navigator.pop()
+                    }) {
+                        val painterResource = painterResource("back.xml")
+                        Image(
+                            painter = painterResource,
+                            contentDescription = "Back"
+                        )
+                    }
+            }) {
+                CurrentScreen()
+            }
+        }
     }
 }
 
@@ -106,8 +128,10 @@ fun Flag(modifier: Modifier = Modifier, flag: Flags) {
 
 @Composable
 fun CountryNames(modifier: Modifier = Modifier, name: Name) {
-    Text(modifier = modifier, text = name.common, style = MaterialTheme.typography.body1)
-    Text(modifier = modifier, text = name.official, style = MaterialTheme.typography.body2)
+    Column(modifier = modifier) {
+        Text(text = name.common, style = MaterialTheme.typography.body1)
+        Text(text = name.official, style = MaterialTheme.typography.body2)
+    }
 }
 
 @Composable
@@ -120,7 +144,7 @@ fun WeatherButton(modifier: Modifier = Modifier, capitals: List<String>, capital
         LazyColumn {
             items(capitals) {
                 Button(onClick = {
-                    //TODO
+                    //TODO Navigate to the weather screen
                 }) {
                     Text(text = "$it weather")
                 }
@@ -131,5 +155,11 @@ fun WeatherButton(modifier: Modifier = Modifier, capitals: List<String>, capital
 
 @Composable
 fun WeatherCard(modifier: Modifier, cityName: String, lat: Double, long: Double) {
-    //TODO
+    val weather = remember { getWeather(cityName, lat, long) }
+    //TODO Create a card with the following data
+    // Capital city name in style h4
+    // 128x128 icon using URL https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png"
+    // Feels like using weather.main.feels_like, in style body1
+    // Temp using weather.main.temp, in style body1
+
 }

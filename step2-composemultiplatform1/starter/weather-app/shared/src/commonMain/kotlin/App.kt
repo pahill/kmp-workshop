@@ -52,15 +52,17 @@ fun CountryCard(modifier: Modifier, country: Country) {
 
 @Composable
 fun Flag(modifier: Modifier = Modifier, flag: Flags) {
-    //TODO
+    //TODO Create a card and add an image pointing to the flag png url
 }
 
 @Composable
 fun CountryNames(modifier: Modifier = Modifier, name: Name) {
-    //TODO
+    // TODO Create a layout and add two texts under each other
+    // Line 1: style is body1, name property is common
+    // Line 2: style is body2, name property is official
 }
 
 @Composable
 fun WeatherButton(modifier: Modifier = Modifier, capitals: List<String>) {
-    //TODO
+    //TODO Create a layout and add all the capital buttons under each other
 }
