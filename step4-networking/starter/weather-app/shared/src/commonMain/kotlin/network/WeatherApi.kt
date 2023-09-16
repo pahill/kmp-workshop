@@ -16,5 +16,6 @@ class WeatherApi {
 
     suspend fun getWeather(lat: Double, long: Double): Weather {
         TODO() // Call the webservice and get the body
+        // The URL is: https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${Config.WeatherApiKey}&units=metric
     }
 }
