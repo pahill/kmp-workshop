@@ -14,11 +14,11 @@
 		</data>
 		<key>Assets.car</key>
 		<data>
-		KSXoqXcm1R7cwySsmUYLCILzibs=
+		SRjHPeK5tWYx3t7kPC9cEazQbgA=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ouLM5ikVB4UJbIfXAG9kxv52zFQ=
+		IXwTrEHxXqisD0vd5qN+JG3wT84=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -29,6 +29,14 @@
 		r0z+smxcS97eshMQQRdJBqh0f/g=
 		</data>
 		<key>compose-multiplatform.xml</key>
+		<data>
+		r8gCglZoXax6ykO9p8TM0ezNWdI=
+		</data>
+		<key>compose-resources/back.xml</key>
+		<data>
+		r0z+smxcS97eshMQQRdJBqh0f/g=
+		</data>
+		<key>compose-resources/compose-multiplatform.xml</key>
 		<data>
 		r8gCglZoXax6ykO9p8TM0ezNWdI=
 		</data>
@@ -53,7 +61,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iLEfQYbxtgOYlWHNhTp8sCqQUAXo9NzLOWKdd70grf4=
+			IKW0mTUxuKrSSHdvft8XSjkKbjlN/RvdkJVszlopmyM=
 			</data>
 		</dict>
 		<key>back.xml</key>
@@ -64,6 +72,20 @@
 			</data>
 		</dict>
 		<key>compose-multiplatform.xml</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			akZt8kkFTTF1xydEm9TQop+zKbdWqCHEUZQW5nuk+xY=
+			</data>
+		</dict>
+		<key>compose-resources/back.xml</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ba0RhQJI3A2jvtDzFTwIRCSg3BynYR0/BA6lGJbcpWg=
+			</data>
+		</dict>
+		<key>compose-resources/compose-multiplatform.xml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
