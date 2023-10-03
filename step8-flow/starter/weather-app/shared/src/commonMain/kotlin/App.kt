@@ -87,10 +87,11 @@ class HomeScreen() : Screen {
                 listCountries = tempCountries
             }
 
-            TODO()
+            //TODO: Collect the flow and assign it to a variable
 
             Column {
-                TODO()
+                //TODO: Display Text composable with the time
+                // You can use style h4
                 LazyColumn() {
                     items(items = listCountries) {
                         CountryCard(
