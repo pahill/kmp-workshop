@@ -13,7 +13,6 @@ class CountrySDK {
     suspend fun getLaunches(): List<Country> {
         return cache.get()
             ?: api.getAllCountries().also {
-                cache.delete()
                 cache.set(it)
             }
     }
