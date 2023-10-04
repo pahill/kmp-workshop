@@ -87,7 +87,7 @@ class HomeScreen() : Screen {
                 listCountries = tempCountries
             }
 
-            val time = remember { mutableStateOf(TimeApi().actualTime) }.value.collectAsState()
+            val time = remember { TimeApi().actualTime }.collectAsState()
 
             Column {
                 Text(modifier = Modifier.align(CenterHorizontally).padding(8.dp), text = "Local time: ${time.value}", style = MaterialTheme.typography.h4)
